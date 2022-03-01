@@ -13,4 +13,8 @@ pipeline {
       }
     }
     
-    stage ('
+    stage ('SSH to Tomcat') {
+      steps {
+        sshagent(['tomcat']) {
+    // some block
+}
