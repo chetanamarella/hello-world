@@ -16,12 +16,13 @@ pipeline {
         sh 'mvn clean install'
       }
     }
-  }
-}
     
-   /* stage ('SSH to Tomcat') {
+    stage ('SSH to Tomcat') {
       steps {
         sshagent(['tomcat']) {
-    // some block
-}*/
+          sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war jenkins@172.31.33.36:/var/lib/tomcat9/webapps'
+        }
+      }
+    }
+  }
   
