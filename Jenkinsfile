@@ -12,9 +12,12 @@ pipeline {
         sh 'mvn clean install'
       }
     }
+  }
+}
     
-    stage ('SSH to Tomcat') {
+   /* stage ('SSH to Tomcat') {
       steps {
         sshagent(['tomcat']) {
     // some block
-}
+}*/
+  
